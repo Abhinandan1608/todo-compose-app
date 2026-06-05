@@ -28,8 +28,9 @@ app.post("/todos", async (req, res) => {
     const todo = {
       title: req.body.title
     };
-
+     
     const result = await db.collection("todos").insertOne(todo);
+    res.send("Version 2");
 
     res.status(201).json(result);
   } catch (error) {
